@@ -12,36 +12,37 @@
 
 <body>
     <h1>Daily Journal</h1>
-    <form action="">
+    <form action="" class="asOne">
         <fieldset>
             <label for="journalDate">Date of entry</label>
             <input type="date" name="journalDate" id="journalDate">
         </fieldset>
     </form>
-    <form action="">
+    <form action="" class="asOne">
         <fieldset>
             <label for="conceptsCovered">Concepts Covered</label>
             <input type="text" name="conceptsCovered" id="conceptsCovered">
         </fieldset>
     </form>
-    <form action="">
+    <form action="" class="asOne">
         <fieldset>
             <label for="journaEntry">Journal Entry</label>
             <input type="text" name="journalEntry" id="journalEntry">
         </fieldset>
 
         <fieldset>
-            <label for="mood">Mood for the Day:</label>
-            <select id="mood" name="moodlist" form="moodform">
-                <option value="sad">Sad</option>
-                <option value="happy">Happy</option>
-                <option value="mad">Mad</option>
-                <option value="blah">Blah</option>
-            </select>
+            <form action="" class="asOne">
+                <label for="mood">Mood for the Day:</label>
+                <select id="mood" name="moodlist" form="moodform">
+                    <option value="sad">Sad</option>
+                    <option value="happy">Happy</option>
+                    <option value="mad">Mad</option>
+                    <option value="blah">Blah</option>
+                </select>
         </fieldset>
-        <select for="recordEntry">Record Journal Entry</select>
-            <input type="button" name="recordEntry" id="recordEntry"> 
-       
+        <input type="submit" name="recordEntry" value="Record Journal Entry">
+    </form>
+
 
 </body>
 
