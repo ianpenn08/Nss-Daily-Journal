@@ -18,7 +18,7 @@ const journal = [
     { 
         date: "07/26/2025",
         concept: "HTML & CSS",
-        entry: "Talked about adding another HTML for locations",
+        entry: "Talked about adding another HTML for locations in a practice",
         mood: "Pleasant"
     },
 
