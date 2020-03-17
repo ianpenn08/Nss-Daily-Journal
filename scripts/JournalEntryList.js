@@ -20,7 +20,6 @@ const EntryListComponent = () => {
             Invoke the component that returns an
             HTML representation of a single entry
         */
-       debugger
        const journalHTMLRep = JournalEntryComponent(entry)
         entryLog.innerHTML += journalHTMLRep
     }
