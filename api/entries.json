@@ -1,0 +1,35 @@
+{
+
+    "entries":[
+        {
+            "date": "07/24/2025",
+            "concept": "HTML & CSS",
+            "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
+            "mood": "Ok"
+        },
+
+
+         { 
+        "date": "07/26/2025",
+        "concept": "HTML & CSS",
+        "entry": "Talked about adding another HTML for locations in a practice",
+        "mood": "Pleasant"
+        },
+
+    { 
+        "date": "07/27/2025",
+        "concept": "Javascript",
+        "entry": "Discussed functions and variables",
+        "mood": "Confused"
+    },
+
+    { 
+        "date": "07/28/2025",
+        "concept": "Javascript",
+        "entry": "Went over Data Providers in java",
+        "mood":  "Frustrated"
+    }
+]
+
+}
+

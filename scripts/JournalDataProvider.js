@@ -1,50 +1,37 @@
-/*
- *   Journal data provider for Daily Journal application
- *
- *      Holds the raw data about each entry and exports
- *      functions that other modules can use to filter
- *      the entries for different purposes.
- */
+let entries = []
 
-// This is the original data. Can't Touch This.
-const journal = [
-    {
-        date: "07/24/2025",
-        concept: "HTML & CSS",
-        entry: "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-        mood: "Ok"
-    },
+const eventHub = document.querySelector(".container")
 
-    { 
-        date: "07/26/2025",
-        concept: "HTML & CSS",
-        entry: "Talked about adding another HTML for locations in a practice",
-        mood: "Pleasant"
-    },
+// const dispatchStateChangeEvent = () => {
+//     const entryStateChangedEvent = new CustomEvent("journalEntries")
 
-    { 
-        date: "07/27/2025",
-        concept: "Javascript",
-        entry: "Discussed functions and variables",
-        mood: "Confused",
-    },
-
-    { 
-        date: "07/28/2025",
-        concept: "Javascript",
-        entry:"Went over Data Providers in java",
-        mood: "Frustrated"
-    }
-]
+//     eventHub.dispatchEvent(entryStateChangedEvent)
+// }
 
 /*
-    You export a function that provides a version of the
-    raw data in the format that you want
+    Allow other modules to get a copy of the application state
 */
-export const useJournalEntries = () => {
-    const sortedByDate = journal.sort(
-        (currentEntry, nextEntry) =>
-            Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
-    )
-    return sortedByDate
+export const useEntries = () => entries.slice()
+
+/*
+    Get the state of the notes from the API into the application
+*/
+export const getEntries = () => {
+    return fetch('http://localhost:3000/entries')
+        .then(response => response.json())
+        .then(parsedEntries => {
+            entries = parsedEntries
+        })
 }
+
+// // export const saveEntries = (entry) => {
+// //     return fetch('http://localhost:3000/entries', {
+// //         method: "POST",
+// //         headers: {
+// //             "Content-Type": "application/json"
+// //         },
+// //         body: JSON.stringify(entry)
+// //     })
+// //     .then(getEntries)
+//     // .then(dispatchStateChangeEvent)
+// }
