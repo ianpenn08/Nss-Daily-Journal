@@ -2,11 +2,11 @@ let entries = []
 
 const eventHub = document.querySelector(".container")
 
-// const dispatchStateChangeEvent = () => {
-//     const entryStateChangedEvent = new CustomEvent("journalEntries")
+const dispatchStateChangeEvent = () => {
+    const entryStateChangedEvent = new CustomEvent("journalEntries")
 
-//     eventHub.dispatchEvent(entryStateChangedEvent)
-// }
+    eventHub.dispatchEvent(entryStateChangedEvent)
+}
 
 /*
     Allow other modules to get a copy of the application state
@@ -24,14 +24,14 @@ export const getEntries = () => {
         })
 }
 
-// // export const saveEntries = (entry) => {
-// //     return fetch('http://localhost:3000/entries', {
-// //         method: "POST",
-// //         headers: {
-// //             "Content-Type": "application/json"
-// //         },
-// //         body: JSON.stringify(entry)
-// //     })
-// //     .then(getEntries)
-//     // .then(dispatchStateChangeEvent)
-// }
+export const saveEntries = (entry) => {
+    return fetch('http://localhost:3000/entries', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entry)
+    })
+    .then(getEntries)
+    .then(dispatchStateChangeEvent)
+}
