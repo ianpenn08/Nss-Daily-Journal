@@ -1,3 +1,24 @@
+import { saveEntries } from "./JournalDataProvider.js"
+
+
+const formContainer = document.querySelector(".journal_form")
+
+// add an event listener to the form container
+formContainer.addEventListener("click", (theEvent) => {
+    // check to see if they clicked on the "Add New Cohort" button
+    if (theEvent.target.value === "recordJournal") {
+        // then take the values of the input fields and create a new cohort object
+        const newEntry = {
+            date: document.querySelector("#journalDate").value
+        }
+
+        // send newly created cohort object to our database.json (baby API)
+        saveEntries(newEntry)
+    }
+})
+
+
+
 const contentTarget= document.querySelector(".journalForm")
 
 
@@ -31,6 +52,13 @@ export const renderForm = () => {
         </select>
     </fieldset>
     </form>
-            <input type="submit" name="recordEntry" value="Record Journal Entry">
+    <button id="recordJournal">Record Journal Entry</button>
     `
     }
+
+
+    export const HTMLForm = () => {
+        renderForm()
+        }
+        
+        export default HTMLForm

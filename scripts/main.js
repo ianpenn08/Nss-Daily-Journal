@@ -1,8 +1,6 @@
 import EntryListComponent from "./JournalEntryList.js"
 import { getEntries} from "./JournalDataProvider.js"
-import { renderForm } from "./journalForm.js"
+import HTMLForm from "./journalForm.js"
 
-EntryListComponent()
-getEntries()
-renderForm()
-
+getEntries().then(EntryListComponent)
+HTMLForm()
