@@ -13,7 +13,7 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("journalEntries", () => {
     // when the cohort's state has changed, clear the cohort container and render the cohort list again
-    entryLog.innerHTML = ""
+    // entryLog.innerHTML = ""
     render()
 })
 

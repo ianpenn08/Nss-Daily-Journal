@@ -4,11 +4,11 @@
  */
 const JournalEntryComponent = (entry) => {
     return `
-        <h1>${entry.concept}</h1>
-        <ul>
-        <li>${entry.date}</li>
-        <li>${entry.entry}</li>
-        <li>${entry.mood}</li>
+        <section>
+        <div>${entry.date}</div>
+        <div>${entry.concept}</div>
+        <div>${entry.entry}</div>
+        <div>${entry.mood}</div>
         </section>
     `
 }
