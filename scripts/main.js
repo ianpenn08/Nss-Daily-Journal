@@ -4,5 +4,6 @@ import HTMLForm from "./journalForm.js"
 
 
 HTMLForm()
-getEntries().then(EntryListComponent)
+getEntries()
+    .then(EntryListComponent)
 
